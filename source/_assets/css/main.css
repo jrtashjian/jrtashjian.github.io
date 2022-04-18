@@ -18,6 +18,13 @@
 	p {
 		@apply my-6;
 	}
+
+	pre {
+		@apply border-t-4 border-b-4;
+	}
+	pre code {
+		@apply block overflow-x-scroll py-4;
+	}
 }
 
 /*
