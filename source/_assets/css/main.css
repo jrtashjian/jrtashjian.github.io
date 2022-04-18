@@ -1,0 +1,68 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+	body {
+		@apply
+			bg-white dark:bg-black
+			text-black dark:text-white
+			font-mono;
+	}
+
+	a {
+		@apply underline hover:no-underline focus:no-underline;
+		@apply text-accent-light dark:text-accent-dark;
+	}
+
+	p {
+		@apply my-6;
+	}
+}
+
+/*
+<figure>
+	<img src="/assets/images/some-picture-pixel.png" />
+	<img src="/assets/images/some-picture.png" class="image-full" />
+</figure>
+
+figure {
+	position: relative;
+}
+figure .image-full {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity .1s;
+}
+figure:hover .image-full {
+	opacity: 100;
+}
+*/
+
+/* Terminal UI */
+/* https://medium.com/@benjamib/retro-terminal-ui-ae9ac8eae71a */
+.crt::after,
+.crt::before {
+	content: " ";
+	display: block;
+	height: 100%;
+	left: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.crt::after {
+	background: rgba(18, 16, 16, 0.1);
+	opacity: 0;
+}
+
+.crt::before {
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+	background-size: 100% 2px, 3px 100%;
+}
