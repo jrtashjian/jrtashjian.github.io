@@ -13,12 +13,19 @@
 	pre code { @apply block overflow-x-scroll py-4; }
 }
 
+section h1,
+section h2,
+section h3 {
+	@apply mt-20;
+}
+
 /*
+Pixel image by default, full resolution on hover.
 <figure>
 	<img src="/assets/images/some-picture-pixel.png" />
 	<img src="/assets/images/some-picture.png" class="image-full" />
 </figure>
-
+*/
 figure {
 	position: relative;
 }
@@ -29,12 +36,13 @@ figure .image-full {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: opacity .1s;
+	transition: opacity .25s;
 }
-figure:hover .image-full {
+figure:hover .image-full,
+figure:active .image-full {
 	opacity: 100;
 }
-*/
+
 
 /* Terminal UI */
 /* https://medium.com/@benjamib/retro-terminal-ui-ae9ac8eae71a */

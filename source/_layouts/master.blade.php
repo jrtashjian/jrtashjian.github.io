@@ -53,37 +53,6 @@
                 @yield('content')
             </main>
 
-            <!-- <section class="my-20">
-                <h2>Posts</h2>
-                <ul>
-                    <li class="my-3">
-                        <a href="#!">Lorem ipsum dolor sit amet.</a>
-                        <span class="block">0000-00-00</span>
-                    </li>
-                    <li class="my-3">
-                        <a href="#!">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest.</a>
-                        <span class="block">0000-00-00</span>
-                    </li>
-                    <li class="my-3">
-                        <a href="#!">Lorem ipsum dolor sit amet.</a>
-                        <span class="block">0000-00-00</span>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="mt-20">
-                <h2>Projects</h2>
-                <div class="flex my-3">
-                    <a href="#!">Lorem ipsum dolor sit amet.</a>
-                </div>
-                <div class="flex my-3">
-                    <a href="#!">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest.</a>
-                </div>
-                <div class="flex my-3">
-                    <a href="#!">Lorem ipsum dolor sit amet.</a>
-                </div>
-            </section> -->
-
             <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
                 Copyright (c) {{ date('Y') }} JR Tashjian
             </footer>
