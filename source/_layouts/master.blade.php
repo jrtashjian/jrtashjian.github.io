@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
     </head>
-    <body class="bg-white dark:bg-black text-black dark:text-white font-mono px-4">
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
         <div class="mx-auto max-w-prose">
 
             <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">

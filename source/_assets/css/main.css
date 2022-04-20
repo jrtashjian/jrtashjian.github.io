@@ -8,7 +8,7 @@
 @layer base {
 	h1,h2,h3,h4,h5,h6 { @apply font-bold; }
 	a { @apply underline hover:no-underline focus:no-underline text-accent-light dark:text-accent-dark; }
-	p { @apply my-6; }
+	p, pre, ol, ul { @apply my-6; }
 	pre { @apply border-t-4 border-b-4; }
 	pre code { @apply block overflow-x-scroll py-4; }
 }
@@ -17,6 +17,14 @@ section h1,
 section h2,
 section h3 {
 	@apply mt-20;
+}
+
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	@apply my-6;
 }
 
 /*
