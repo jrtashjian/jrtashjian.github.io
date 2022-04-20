@@ -1,5 +1,6 @@
 ---
 extends: _layouts.master
+section: body
 ---
 
 <figure>

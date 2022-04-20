@@ -50,7 +50,7 @@
             </header>
 
             <main role="main">
-                @yield('content')
+                @yield('body')
             </main>
 
             <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
