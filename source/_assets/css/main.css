@@ -56,6 +56,7 @@ body::before {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1;
 }
 body::after {
 	background: rgba(18, 16, 16, 0.1);
