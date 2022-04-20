@@ -9,8 +9,10 @@
 	h1,h2,h3,h4,h5,h6 { @apply font-bold; }
 	a { @apply underline hover:no-underline focus:no-underline text-accent-light dark:text-accent-dark; }
 	p, pre, ol, ul { @apply my-6; }
-	pre { @apply border-t-4 border-b-4; }
 	pre code { @apply block overflow-x-scroll py-4; }
+	*:focus-visible {
+		outline: auto;
+	}
 }
 
 section h1,
