@@ -25,6 +25,8 @@
 
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by {{ $page->siteName }} (The RSS Feed)" href="{{ $page->baseUrl }}/feed.xml" />
     </head>
     <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
         <div class="mx-auto max-w-prose">

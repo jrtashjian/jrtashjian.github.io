@@ -15,3 +15,6 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+
+// Generate rss feed listener
+$events->afterBuild( App\Listeners\GenerateFeed::class );
