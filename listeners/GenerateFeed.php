@@ -12,6 +12,11 @@ class GenerateFeed {
 	public function handle( Jigsaw $jigsaw ) {
 		$config = $jigsaw->getConfig();
 
+		if ( ! $config['baseUrl'] ) {
+			echo("\nTo generate a feed.xml file, please specify a 'baseUrl' in config.php.\n\n");
+			return;
+		}
+
 		$feed = new Feed();
 
 		$channel = new Channel();
