@@ -31,25 +31,20 @@ article h6 {
 
 /*
 Pixel image by default, full resolution on hover.
-<figure>
+<figure style="background-image:url(/assets/images/some-picture-pixel.png);">
 	<img src="/assets/images/some-picture-pixel.png" />
 	<img src="/assets/images/some-picture.png" class="image-full" />
 </figure>
 */
 figure {
-	position: relative;
+	background-size: contain;
 }
-figure .image-full {
+figure img {
 	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	transition: opacity .25s;
 }
-figure:hover .image-full,
-figure:active .image-full {
+figure:hover img,
+figure:active img {
 	opacity: 100;
 }
 
