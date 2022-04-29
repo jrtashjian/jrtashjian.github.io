@@ -7,8 +7,10 @@
 
 @layer base {
 	h1,h2,h3,h4,h5,h6 { @apply font-bold; }
-	a { @apply underline hover:no-underline focus:no-underline text-accent-light dark:text-accent-dark; }
-	p, pre, ol, ul { @apply my-6; }
+	a { @apply underline hover:no-underline focus:no-underline text-blue-500 dark:text-yellow-300; }
+	p, pre, ol, ul {
+		@apply my-4;
+	}
 	pre code { @apply block overflow-x-scroll py-4; }
 	*:focus-visible {
 		outline: auto;
@@ -26,14 +28,30 @@ article h3,
 article h4,
 article h5,
 article h6 {
-	@apply my-6;
+	@apply mt-8 mb-4;
+}
+
+main > article h1::before { content: '# '; }
+main > article h2::before { content: '## '; }
+main > article h3::before { content: '### '; }
+main > article h4::before { content: '#### '; }
+main > article h5::before { content: '##### '; }
+main > article h6::before { content: '###### '; }
+
+main > article h1,
+main > article h2,
+main > article h3,
+main > article h4,
+main > article h5,
+main > article h6 {
+	@apply text-gray-400;
+	/* @apply text-green-600 dark:text-green-500; */
 }
 
 /*
 Pixel image by default, full resolution on hover.
 <figure style="background-image:url(/assets/images/some-picture-pixel.png);">
-	<img src="/assets/images/some-picture-pixel.png" />
-	<img src="/assets/images/some-picture.png" class="image-full" />
+	<img src="/assets/images/some-picture.png" />
 </figure>
 */
 figure {
@@ -70,4 +88,23 @@ body::after {
 body::before {
 	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 	background-size: 100% 2px, 3px 100%;
+}
+
+.alert {
+	@apply my-8 p-4;
+}
+.alert > * {
+	margin: 0;
+}
+.alert a {
+	color: inherit;
+}
+.alert--danger {
+	@apply bg-red-300 text-red-800;
+}
+.alert--warning {
+	@apply bg-yellow-300 text-yellow-800;
+}
+.alert--info {
+	@apply bg-blue-300 text-blue-800;
 }
