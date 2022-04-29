@@ -6,7 +6,6 @@
 @import 'highlight.js/styles/a11y-dark.css' (prefers-color-scheme: dark );
 
 @layer base {
-	h1,h2,h3,h4,h5,h6 { @apply font-bold; }
 	a { @apply underline hover:no-underline focus:no-underline text-blue-500 dark:text-yellow-300; }
 	p, pre, ol, ul {
 		@apply my-4;
@@ -17,18 +16,27 @@
 	}
 }
 
-section h1,
-section h2,
-section h3 {
-	@apply mt-20;
+/* Markdown Syntax Styling */
+@screen sm {
+	main > article h1 { text-indent: -2ch; }
+	main > article h2 { text-indent: -3ch; }
+	main > article h3 { text-indent: -4ch; }
+	main > article h4 { text-indent: -5ch; }
+	main > article h5 { text-indent: -6ch; }
+	main > article h6 { text-indent: -7ch; }
+	main > article ul > li { text-indent: -2ch; }
+	main > article ol > li { text-indent: -3ch; }
 }
 
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-	@apply mt-8 mb-4;
+main > article h1::before,
+main > article h2::before,
+main > article h3::before,
+main > article h4::before,
+main > article h5::before,
+main > article h6::before,
+main > article ul > li::before,
+main > article ol > li::before {
+	@apply text-gray-400 dark:text-gray-500;
 }
 
 main > article h1::before { content: '# '; }
@@ -38,15 +46,26 @@ main > article h4::before { content: '#### '; }
 main > article h5::before { content: '##### '; }
 main > article h6::before { content: '###### '; }
 
-main > article h1,
-main > article h2,
-main > article h3,
-main > article h4,
-main > article h5,
-main > article h6 {
-	@apply text-gray-400;
-	/* @apply text-green-600 dark:text-green-500; */
-}
+main > article ul > li::before { content: '- '; }
+main > article ol { counter-reset: li; }
+main > article ol > li { counter-increment: li; }
+main > article ol > li::before { content: counter(li) ". "; }
+
+main > article h1 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+main > article h2 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+main > article h3 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+main > article h4 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+main > article h5 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+main > article h6 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+
+main > article blockquote { @apply pl-4 border-l-8; }
+
+/*
+section h1,
+section h2,
+section h3 {
+	@apply mt-20;
+} */
 
 /*
 Pixel image by default, full resolution on hover.
@@ -69,7 +88,7 @@ figure:active img {
 
 /* Terminal UI */
 /* https://medium.com/@benjamib/retro-terminal-ui-ae9ac8eae71a */
-body::after,
+/* body::after,
 body::before {
 	content: " ";
 	display: block;
@@ -88,7 +107,7 @@ body::after {
 body::before {
 	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
 	background-size: 100% 2px, 3px 100%;
-}
+} */
 
 .alert {
 	@apply my-8 p-4;
