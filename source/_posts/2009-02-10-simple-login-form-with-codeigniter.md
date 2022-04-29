@@ -3,9 +3,9 @@ extends: _layouts.post
 title: Simple Login Form With CodeIgniter
 date: 2009-02-10
 categories: [code]
+alert_message: This tutorial is dated. It is important you take care how you store and check a user's password, they should always be stored with one-way encryption. Read more about [Password Hashing](http://www.phptherightway.com/#web_application_security).
+alert_type: warning
 ---
-**Notice:** This tutorial is dated. It is important you take care how you store and check a user's password, they should always be stored with one-way encryption. Read more about [Password Hashing](http://www.phptherightway.com/#web_application_security).
-
 One of the most basic but, most important part of a web application is the login form. The login form is the first stage of securing your web application. I will show you how I construct one using the [Encryption Class](http://codeigniter.com/user_guide/libraries/encryption.html), the [Form Validation Class](http://codeigniter.com/user_guide/libraries/form_validation.html) and the [Session Class](http://codeigniter.com/user_guide/libraries/sessions.html) of [CodeIgniter](http://codeigniter.com).
 
 To begin, we will need to create our view and controller files as well as load the libraries we will be using. I will not be using a database for this tutorial but, rather an array containing the username and password of out user.

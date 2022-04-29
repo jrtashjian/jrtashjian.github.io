@@ -3,9 +3,9 @@ extends: _layouts.post
 title: Postmark API Wrapper for CodeIgniter
 date: 2011-04-22
 categories: [codeigniter]
+alert_message: This project is no longer maintained.
+alert_type: warning
 ---
-**Notice:** This project is no longer maintained.
-
 I've been using [Postmark](http://postmarkapp.com/) and it's API for quite a while. If you're still sending out emails through PHP's [mail()](http://php.net/mail) function, you need to check out Postmark! With Postmark you can off-load those transactional emails and not have to worry about it yourself.
 
 While there is a Postmark API Wrapper for [CodeIgniter](http://codeigniter.com/) already, I felt it was unnecessary to create an entirely different Email class just to send off API requests to Postmark. Instead, this library extends the Core CI_Email class, retaining the small footprint philosophy of CodeIgniter.
