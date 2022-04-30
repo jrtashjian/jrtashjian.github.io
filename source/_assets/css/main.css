@@ -7,7 +7,7 @@
 
 @layer base {
 	a { @apply underline hover:no-underline focus:no-underline text-blue-500 dark:text-yellow-300; }
-	p, pre, ol, ul {
+	p, pre, ol, ul, img {
 		@apply my-4;
 	}
 	pre code { @apply block overflow-x-scroll py-4; }
