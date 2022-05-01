@@ -1,6 +1,6 @@
 @if( count( $posts ) > 0 )
 	<section>
-		<h2>Archive</h2>
+		<h2 class="font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4">Archive</h2>
 		<ul>
 			@foreach( $posts as $entry )
 				<li class="my-1.5">
