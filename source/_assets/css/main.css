@@ -20,49 +20,49 @@
 @screen sm {
 	main > section h1,
 	main > article h1 { text-indent: -2ch; }
-	main > article h2 { text-indent: -3ch; }
-	main > article h3 { text-indent: -4ch; }
-	main > article h4 { text-indent: -5ch; }
-	main > article h5 { text-indent: -6ch; }
-	main > article h6 { text-indent: -7ch; }
-	main > article ul > li { text-indent: -2ch; }
-	main > article ol > li { text-indent: -3ch; }
+	.e-content h2 { text-indent: -3ch; }
+	.e-content h3 { text-indent: -4ch; }
+	.e-content h4 { text-indent: -5ch; }
+	.e-content h5 { text-indent: -6ch; }
+	.e-content h6 { text-indent: -7ch; }
+	.e-content ul > li { text-indent: -2ch; }
+	.e-content ol > li { text-indent: -3ch; }
 }
 
 main > section h1::before,
 main > article h1::before,
-main > article h2::before,
-main > article h3::before,
-main > article h4::before,
-main > article h5::before,
-main > article h6::before,
-main > article ul > li::before,
-main > article ol > li::before {
+.e-content h2::before,
+.e-content h3::before,
+.e-content h4::before,
+.e-content h5::before,
+.e-content h6::before,
+.e-content ul > li::before,
+.e-content ol > li::before {
 	@apply text-gray-400 dark:text-gray-500;
 }
 
 main > section h1::before,
 main > article h1::before { content: '# '; }
-main > article h2::before { content: '## '; }
-main > article h3::before { content: '### '; }
-main > article h4::before { content: '#### '; }
-main > article h5::before { content: '##### '; }
-main > article h6::before { content: '###### '; }
+.e-content h2::before { content: '## '; }
+.e-content h3::before { content: '### '; }
+.e-content h4::before { content: '#### '; }
+.e-content h5::before { content: '##### '; }
+.e-content h6::before { content: '###### '; }
 
-main > article ul > li::before { content: '- '; }
-main > article ol { counter-reset: li; }
-main > article ol > li { counter-increment: li; }
-main > article ol > li::before { content: counter(li) ". "; }
+.e-content ul > li::before { content: '- '; }
+.e-content ol { counter-reset: li; }
+.e-content ol > li { counter-increment: li; }
+.e-content ol > li::before { content: counter(li) ". "; }
 
 main > section h1,
 main > article h1 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
-main > article h2 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
-main > article h3 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
-main > article h4 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
-main > article h5 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
-main > article h6 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+.e-content h2 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+.e-content h3 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+.e-content h4 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+.e-content h5 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
+.e-content h6 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-4; }
 
-main > article blockquote { @apply pl-4 border-l-8; }
+.e-content blockquote { @apply pl-4 border-l-8; }
 
 /* Post Header */
 section > header h1,

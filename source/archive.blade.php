@@ -1,7 +1,7 @@
 ---
 title: Archives
 ---
-@extends('_layouts.page')
+@extends('_layouts.no-format')
 
 @section('content')
 	@php
