@@ -65,7 +65,9 @@ main > article h6 { @apply font-bold text-blue-500 dark:text-yellow-300 mt-8 mb-
 main > article blockquote { @apply pl-4 border-l-8; }
 
 /* Post Header */
+section > header h1,
 article > header h1 { @apply my-0; }
+section > header time,
 article > header time { @apply italic text-gray-400 dark:text-gray-500; }
 
 /* Section spacing */
