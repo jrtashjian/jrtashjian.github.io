@@ -7,5 +7,10 @@
 
 	@yield('content')
 
-	@include('_partials.all-posts')
+	<section>
+		<ul>
+			<li><a href="/archive">/Archive</a></li>
+			<li><a href="/now">/Now</a></li>
+		</ul>
+	</section>
 @endsection
