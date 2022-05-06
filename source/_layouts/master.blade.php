@@ -4,14 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>{{ $page->title ? $page->title . ' | ' : '' }}{{ $page->siteName }}</title>
         <meta name="description" content="{{ $page->description ?? $page->siteDescription }}">
 
         <meta property="og:title" content="{{ $page->title ? $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:type" content="{{ $page->type ?? 'website' }}" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:description" content="{{ $page->description ?? $page->siteDescription }}" />
+        <meta property="og:image" content="{{ $page->baseUrl }}/assets/images/about-page.webp" />
 
-        <title>{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}</title>
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="{{ str_replace( 'https://', '', $page->baseUrl ) }}">
+        <meta property="twitter:url" content="{{ $page->baseUrl }}">
+        <meta name="twitter:title" content="{{ $page->title ? $page->title . ' | ' : '' }}{{ $page->siteName }}">
+        <meta name="twitter:description" content="{{ $page->description ?? $page->siteDescription }}">
+        <meta name="twitter:image" content="{{ $page->baseUrl }}/assets/images/about-page.webp">
+
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
         <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
