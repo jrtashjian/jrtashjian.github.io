@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Modular Sidebar in WordPress | JR Tashjian</title>
+        <meta name="description" content="Senior Software Engineer">
+
+        <meta property="og:title" content="Modular Sidebar in WordPress | JR Tashjian"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jrtashjian.com/2010/08/modular-sidebar-in-wordpress"/>
+        <meta property="og:description" content="Senior Software Engineer" />
+        <meta property="og:image" content="https://jrtashjian.com/assets/images/about-page.webp" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="jrtashjian.com">
+        <meta property="twitter:url" content="https://jrtashjian.com">
+        <meta name="twitter:title" content="Modular Sidebar in WordPress | JR Tashjian">
+        <meta name="twitter:description" content="Senior Software Engineer">
+        <meta name="twitter:image" content="https://jrtashjian.com/assets/images/about-page.webp">
+
+
+        <link rel="canonical" href="https://jrtashjian.com/2010/08/modular-sidebar-in-wordpress">
+        <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
+        <link rel="icon" href="/assets/images/favicon-192x192.jpg" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/assets/images/favicon-180x180.jpg" />
+        <meta name="msapplication-TileImage" content="/assets/images/favicon-270x270.jpg" />
+
+                <script defer data-domain="jrtashjian.com" src="https://plausible.jrtashjian.com/js/plausible.js"></script>
+        
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4e5d00fa5633ea52d10317e19903d42b">
+        <script defer src="/assets/build/js/main.js?id=70f6d1d6eeef91fcbf04b0be8a530710"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by JR Tashjian (The RSS Feed)" href="https://jrtashjian.com/feed.xml" />
+    </head>
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
+        <div class="mx-auto max-w-prose">
+
+            <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">
+                <a href="/" title="JR Tashjian home" class="my-2">
+                    <h1 class="font-bold">~/jrtashjian</h1>
+                </a>
+                <div class="h-card flex ml-auto mr-0">
+                    <a href="https://talos.link/@jrtashjian" rel="me" class="u-url inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M23.193 7.879c0-5.206-3.411-6.732-3.411-6.732C18.062.357 15.108.025 12.041 0h-.076c-3.068.025-6.02.357-7.74 1.147 0 0-3.411 1.526-3.411 6.732 0 1.192-.023 2.618.015 4.129.124 5.092.934 10.109 5.641 11.355 2.17.574 4.034.695 5.535.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.129.539c-2.165-.074-4.449-.233-4.799-2.891a5.499 5.499 0 0 1-.048-.745s2.125.52 4.817.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.507.475-6.507zm-4.024 6.709h-2.497V8.469c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.312v3.349h-2.483v-3.35c0-1.536-.602-2.312-1.802-2.312-1.085 0-1.628.655-1.628 1.944v6.119H4.832V8.284c0-1.289.328-2.313.987-3.07.68-.758 1.569-1.146 2.674-1.146 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.304z" />
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a href="mailto:hello@jrtashjian.com" class="u-email inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </header>
+
+            <main role="main">
+                	<article class="h-entry">
+		<header>
+			<h1 class="p-name">Modular Sidebar in WordPress</h1>
+			<time class="dt-published mr-3" datetime="2010-08-15T20:00:00-04:00" title="Published on August 16, 2010">August 16, 2010</time>
+			<a class="p-author h-card sr-only" href="http://jrtashjian.com">JR Tashjian</a>
+		</header>
+
+		
+		<div class="e-content">
+			<p>Like all good developers, I go back and look at past code to see what I could have improved and how I can apply the new knowledge to a current project. Both of the projects in question had sidebars with sections that are shared throughout the site. However, not all sections are being displayed at once. Some blocks of HTML would be show on the homepage, another on the about page and both on the contact page. Here is how I coded it in <a href="http://wordpress.org">WordPress</a> for each site.</p>
+
+<h2>Site One</h2>
+
+<p>For this site, there is 'Live Bulletin', 'Make a Donation', 'Testimonials', 'Downloads' and 'Social Networks' sections. In the sidebar template I had each section in it's own <code>if</code> statement. For each <code>if</code> statement, I would use WordPress' <a href="http://codex.wordpress.org/Conditional_Tags">Conditional Tags</a> to show or hide certain sections that I needed for a particular page. Here is a quick glance at how my template file was looking:</p>
+
+<pre><code>&lt;div id="sidebar"&gt;
+
+    &lt;?php if ( !is_page( 270 ) AND !is_page( 262 ) ) : ?&gt;
+        &lt;div id="live-bulletin"&gt;
+            &lt;!-- html code --&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ( is_page( 270 ) ) : ?&gt;
+        &lt;div id="make-donation"&gt;
+            &lt;!-- html code --&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ( is_home() OR is_page( 262 ) ) : ?&gt;
+        &lt;div id="testimonials"&gt;
+            &lt;!-- html code --&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;?php if ( is_front_page() OR is_search() OR is_page( 890 ) ) : ?&gt;
+        &lt;div id="downloads"&gt;
+            &lt;!-- html code --&gt;
+        &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+
+    &lt;div id="social-networks"&gt;
+        &lt;!-- html code (shown on all pages) --&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+<p>This sidebar template got pretty messy, very quickly. Little updates such as displaying a section on another page became a hassle. For the next site, I didn't rush, took my time and tried a different method.</p>
+
+<h2>Site Two</h2>
+
+<p>I'll just use the same sections as the previous site for easy comparison. With this next method, I decided to put each section in it's own function. That way, I could separate the logic from the view easily and make modifications quickly. Here is how this template came out:</p>
+
+<pre><code>&lt;?php function sidebar_livebulletin() { ?&gt;
+    &lt;div id="live-bulletin"&gt;
+        &lt;!-- html code --&gt;
+    &lt;/div&gt;
+&lt;?php } ?&gt;
+
+&lt;?php function sidebar_makedonation() { ?&gt;
+    &lt;div id="make-donation"&gt;
+        &lt;!-- html code --&gt;
+    &lt;/div&gt;
+&lt;?php } ?&gt;
+
+&lt;?php function sidebar_testimonials() { ?&gt;
+    &lt;div id="testimonials"&gt;
+        &lt;!-- html code --&gt;
+    &lt;/div&gt;
+&lt;?php } ?&gt;
+
+&lt;?php function sidebar_downloads() { ?&gt;
+    &lt;div id="downloads"&gt;
+        &lt;!-- html code --&gt;
+    &lt;/div&gt;
+&lt;?php } ?&gt;
+
+&lt;?php function sidebar_socialnetworks() { ?&gt;
+    &lt;div id="social-networks"&gt;
+        &lt;!-- html code --&gt;
+    &lt;/div&gt;
+&lt;?php } ?&gt;
+
+&lt;div id="sidebar"&gt;
+    &lt;?php
+    // Home Page
+    if ( is_front_page() ) {
+        sidebar_livebulletin();
+        sidebar_testimonials();
+        sidebar_socialnetworks();
+    }
+
+    // About Page
+    if ( is_page( 8 ) ) {
+        sidebar_testimonials();
+        sidebar_downloads();
+        sidebar_socialnetworks();
+    }
+
+    // Contact Page
+    if( is_page( 12 ) ) {
+        sidebar_makedonation();
+        sidebar_socialnetworks();
+    }
+    ?&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Now that is a better looking template! I've seen this function-based implementation before and I really like it. Updating this template has proven to be quick and easy. I have already started to adopt this method and will continue too until I establish a better method.</p>
+		</div>
+	</article>
+            </main>
+
+            <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
+                Copyright (c) 2022 JR Tashjian
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>CodeIgniter Form with Text CAPTCHA | JR Tashjian</title>
+        <meta name="description" content="Senior Software Engineer">
+
+        <meta property="og:title" content="CodeIgniter Form with Text CAPTCHA | JR Tashjian"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jrtashjian.com/2011/01/codeigniter-form-with-text-captcha"/>
+        <meta property="og:description" content="Senior Software Engineer" />
+        <meta property="og:image" content="https://jrtashjian.com/assets/images/about-page.webp" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="jrtashjian.com">
+        <meta property="twitter:url" content="https://jrtashjian.com">
+        <meta name="twitter:title" content="CodeIgniter Form with Text CAPTCHA | JR Tashjian">
+        <meta name="twitter:description" content="Senior Software Engineer">
+        <meta name="twitter:image" content="https://jrtashjian.com/assets/images/about-page.webp">
+
+
+        <link rel="canonical" href="https://jrtashjian.com/2011/01/codeigniter-form-with-text-captcha">
+        <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
+        <link rel="icon" href="/assets/images/favicon-192x192.jpg" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/assets/images/favicon-180x180.jpg" />
+        <meta name="msapplication-TileImage" content="/assets/images/favicon-270x270.jpg" />
+
+                <script defer data-domain="jrtashjian.com" src="https://plausible.jrtashjian.com/js/plausible.js"></script>
+        
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4e5d00fa5633ea52d10317e19903d42b">
+        <script defer src="/assets/build/js/main.js?id=70f6d1d6eeef91fcbf04b0be8a530710"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by JR Tashjian (The RSS Feed)" href="https://jrtashjian.com/feed.xml" />
+    </head>
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
+        <div class="mx-auto max-w-prose">
+
+            <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">
+                <a href="/" title="JR Tashjian home" class="my-2">
+                    <h1 class="font-bold">~/jrtashjian</h1>
+                </a>
+                <div class="h-card flex ml-auto mr-0">
+                    <a href="https://talos.link/@jrtashjian" rel="me" class="u-url inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M23.193 7.879c0-5.206-3.411-6.732-3.411-6.732C18.062.357 15.108.025 12.041 0h-.076c-3.068.025-6.02.357-7.74 1.147 0 0-3.411 1.526-3.411 6.732 0 1.192-.023 2.618.015 4.129.124 5.092.934 10.109 5.641 11.355 2.17.574 4.034.695 5.535.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.129.539c-2.165-.074-4.449-.233-4.799-2.891a5.499 5.499 0 0 1-.048-.745s2.125.52 4.817.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.507.475-6.507zm-4.024 6.709h-2.497V8.469c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.312v3.349h-2.483v-3.35c0-1.536-.602-2.312-1.802-2.312-1.085 0-1.628.655-1.628 1.944v6.119H4.832V8.284c0-1.289.328-2.313.987-3.07.68-.758 1.569-1.146 2.674-1.146 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.304z" />
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a href="mailto:hello@jrtashjian.com" class="u-email inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </header>
+
+            <main role="main">
+                	<article class="h-entry">
+		<header>
+			<h1 class="p-name">CodeIgniter Form with Text CAPTCHA</h1>
+			<time class="dt-published mr-3" datetime="2011-01-13T19:00:00-05:00" title="Published on January 14, 2011">January 14, 2011</time>
+			<a class="p-author h-card sr-only" href="http://jrtashjian.com">JR Tashjian</a>
+		</header>
+
+		
+		<div class="e-content">
+			<blockquote>
+  <p>"A CAPTCHA (Completely Automated Public Turing Test To Tell Computers and Humans Apart) is a program that protects websites against bots by generating and grading tests that humans can pass but current computer programs cannot."</p>
+  
+  <p>- <a href="http://captcha.net">captcha.net</a></p>
+</blockquote>
+
+<p>The current CAPTCHA system I started using is <a href="http://textcaptcha.com">Text CAPTCHA</a>. The Text CAPTCHA web service generates text-based CAPTCHAs which is a single question that can be easily solved by humans but cannot be solved by a robot. Since I added comments functionality to ThePollPlace a few weeks ago, I've been noticing lots of spam. Lots meaning, thousands of spam comments. So I implemented Text CAPTCHA because it was simple and easy to do. Now, I'll show you how to implement it into a form using <a href="http://codeigniter.com">CodeIgniter</a>. First I'll show you the code, then I'll explain it.</p>
+
+<pre><code>// application/controllers/example.php
+class Example extends Controller {
+
+    function Example() {
+        parent::Controller();
+    }
+
+    function index() {
+        // load libraries
+        $this-&gt;load-&gt;library( array( 'session', 'form_validation' ) );
+
+        // load helper
+        $this-&gt;load-&gt;helper( 'form' );
+
+        // setup form validation
+        $this-&gt;form_validation-&gt;set_rules( 'name', 'name', 'required' );
+        $this-&gt;form_validation-&gt;set_rules( 'email', 'email', 'valid_email' );
+        $this-&gt;form_validation-&gt;set_rules( 'url', 'url', 'prep_url' );
+        $this-&gt;form_validation-&gt;set_rules( 'captcha', 'captcha', 'required|callback_check_captcha' );
+        $this-&gt;form_validation-&gt;set_rules( 'comment', 'comment', 'required' );
+
+        if ( $this-&gt;form_validation-&gt;run() ) {
+            // create comment
+            die('Validated!');
+        }
+
+        // setup textCAPTCHA
+        try {
+            $xml = @new SimpleXMLElement( 'http://textcaptcha.com/api/your_api_key', NULL, TRUE) ;
+        } catch ( Exception $e ) {
+            $fallback = '';
+            $fallback .= 'Is ice hot or cold?';
+            $fallback .= '' . md5( 'cold' ) . '';
+            $fallback .= '';
+            $xml = new SimpleXMLElement( $fallback );
+        }
+
+        // store answers in session for use later
+        $answers = array();
+        foreach ( $xml-&gt;answer as $hash ) {
+            $answers[] = (string)$hash;
+        }
+        $this-&gt;session-&gt;set_userdata( 'captcha_answers', $answers );
+
+        // load vars into view
+        $this-&gt;load-&gt;vars( array( 'captcha' =&gt; (string)$xml-&gt;question ) );
+
+        // load the view
+        $this-&gt;load-&gt;view( 'example' );
+    }
+
+    function check_captcha( $string ) {
+        $user_answer = md5( strtolower( trim( $string ) ) );
+        $answers = $this-&gt;session-&gt;userdata( 'captcha_answers' );
+
+        if( in_array( $user_answer, $answers ) ) {
+            return TRUE;
+        } else {
+            $this-&gt;form_validation-&gt;set_message( 'check_captcha', 'Your answer was incorrect!' );
+            return FALSE;
+        }
+    }
+}
+</code></pre>
+
+<pre><code>// application/views/example.php
+&lt;h2&gt;Leave a Comment&lt;/h2&gt;
+&lt;?php echo form_open( '/example/index/' ); ?&gt;
+
+&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( 'Name', 'name' ); ?&gt;
+    &lt;?php echo form_error( 'name' ); ?&gt;
+    &lt;?php echo form_input( 'name' ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( 'Email', 'email' ); ?&gt;
+    &lt;?php echo form_error( 'email' ); ?&gt;
+    &lt;?php echo form_input( 'email' ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( 'Url', 'url' ); ?&gt;
+    &lt;?php echo form_error( 'url' ); ?&gt;
+    &lt;?php echo form_input( 'url' ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( $captcha, 'captcha' ); ?&gt;
+    &lt;?php echo form_error( 'captcha' ); ?&gt;
+    &lt;?php echo form_input( 'captcha' ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="textarea"&gt;
+    &lt;?php echo form_label( 'Comment', 'comment' ); ?&gt;
+    &lt;?php echo form_error( 'comment' ); ?&gt;
+    &lt;?php echo form_textarea( 'comment' ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="buttons"&gt;
+    &lt;button type="submit" name="submit" value="submit"&gt;Submit Comment&lt;/button&gt;
+&lt;/div&gt;
+&lt;?php echo form_close(); ?&gt;
+</code></pre>
+
+<p>In order for Text CAPTCHA to do its job, we need to add a new form field for the question to be answered. I pass the question to the view as <code>$captcha</code>.</p>
+
+<pre><code>&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( $captcha, 'captcha' ); ?&gt;
+    &lt;?php echo form_error( 'captcha' ); ?&gt;
+    &lt;?php echo form_input( 'captcha' ); ?&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Using CodeIgniter's <a href="http://codeigniter.com/user_guide/libraries/form_validation.html">Form Validation library</a>, we need to add a new rule for the CAPTCHA. Notice we also have defined a call back: <code>callback_check_captcha</code>. We will use this callback to write a custom validation function to make sure our CAPTCHA was answered correctly</p>
+
+<pre><code>$this-&gt;form_validation-&gt;set_rules( 'captcha', 'captcha', 'required|callback_check_captcha' );
+</code></pre>
+
+<p>Next we need to call the Text CAPTCHA service to get our random question. You will need to <a href="http://textcaptcha.com/register">register</a> to receive your api key. Be sure to replace <code>your_api_key</code> with the key you receive. This try-catch statement will attempt to communicate with the Text CAPTCHA web service. If it fails, we fallback to a predefined question seamlessly. We then store all of the accepted answers into an array which is also stored in the session so we can use it for validation later.</p>
+
+<pre><code>// setup textCAPTCHA
+try {
+    $xml = @new SimpleXMLElement('http://textcaptcha.com/api/your_api_key', NULL, TRUE);
+} catch ( Exception $e ) {
+    $fallback = '&lt;captcha&gt;';
+    $fallback .= '&lt;question&gt;Is ice hot or cold?&lt;/question&gt;';
+    $fallback .= '&lt;answer&gt;' . md5( 'cold' ) . '&lt;answer&gt;';
+    $fallback .= '&lt;/captcha&gt;';
+    $xml = new SimpleXMLElement( $fallback );
+}
+
+// store answers in session for use later
+$answers = array();
+foreach ( $xml-&gt;answer as $hash ) {
+    $answers[] = (string)$hash;
+}
+$this-&gt;session-&gt;set_userdata( 'captcha_answers', $answers );
+</code></pre>
+
+<p>After Text CAPTCHA is setup and initialized, we need to pass the question to our view for use in the form.</p>
+
+<pre><code>// load vars into view
+$this-&gt;load-&gt;vars( array( 'captcha' =&gt; (string)$xml-&gt;question ) );
+</code></pre>
+
+<p>CodeIgniter's Form Validation library makes custom validation functions easy. All we need to do is check if the answer submitted is in the list of acceptable answers. If not, we fail the test and return our error message.</p>
+
+<pre><code>function check_captcha( $string ) {
+    $user_answer = md5( strtolower( trim( $string ) ) );
+    $answers = $this-&gt;session-&gt;userdata( 'captcha_answers' );
+
+    if ( in_array( $user_answer, $answers ) ) {
+        return TRUE;
+    } else {
+        $this-&gt;form_validation-&gt;set_message( 'check_captcha', 'Your answer was incorrect!' );
+        return FALSE;
+    }
+}
+</code></pre>
+
+<p>That's it! Simple enough, right? You can <a href="https://jrtashjian.com/wp-content/uploads/2011/01/codeigniter-form-with-text-captcha.zip">download the demo</a> for the complete code.</p>
+		</div>
+	</article>
+            </main>
+
+            <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
+                Copyright (c) 2022 JR Tashjian
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>CodeIgniter’s alternator() function | JR Tashjian</title>
+        <meta name="description" content="Senior Software Engineer">
+
+        <meta property="og:title" content="CodeIgniter’s alternator() function | JR Tashjian"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jrtashjian.com/2009/10/codeigniters-alternator-function"/>
+        <meta property="og:description" content="Senior Software Engineer" />
+        <meta property="og:image" content="https://jrtashjian.com/assets/images/about-page.webp" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="jrtashjian.com">
+        <meta property="twitter:url" content="https://jrtashjian.com">
+        <meta name="twitter:title" content="CodeIgniter’s alternator() function | JR Tashjian">
+        <meta name="twitter:description" content="Senior Software Engineer">
+        <meta name="twitter:image" content="https://jrtashjian.com/assets/images/about-page.webp">
+
+
+        <link rel="canonical" href="https://jrtashjian.com/2009/10/codeigniters-alternator-function">
+        <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
+        <link rel="icon" href="/assets/images/favicon-192x192.jpg" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/assets/images/favicon-180x180.jpg" />
+        <meta name="msapplication-TileImage" content="/assets/images/favicon-270x270.jpg" />
+
+                <script defer data-domain="jrtashjian.com" src="https://plausible.jrtashjian.com/js/plausible.js"></script>
+        
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4e5d00fa5633ea52d10317e19903d42b">
+        <script defer src="/assets/build/js/main.js?id=70f6d1d6eeef91fcbf04b0be8a530710"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by JR Tashjian (The RSS Feed)" href="https://jrtashjian.com/feed.xml" />
+    </head>
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
+        <div class="mx-auto max-w-prose">
+
+            <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">
+                <a href="/" title="JR Tashjian home" class="my-2">
+                    <h1 class="font-bold">~/jrtashjian</h1>
+                </a>
+                <div class="h-card flex ml-auto mr-0">
+                    <a href="https://talos.link/@jrtashjian" rel="me" class="u-url inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M23.193 7.879c0-5.206-3.411-6.732-3.411-6.732C18.062.357 15.108.025 12.041 0h-.076c-3.068.025-6.02.357-7.74 1.147 0 0-3.411 1.526-3.411 6.732 0 1.192-.023 2.618.015 4.129.124 5.092.934 10.109 5.641 11.355 2.17.574 4.034.695 5.535.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.129.539c-2.165-.074-4.449-.233-4.799-2.891a5.499 5.499 0 0 1-.048-.745s2.125.52 4.817.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.507.475-6.507zm-4.024 6.709h-2.497V8.469c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.312v3.349h-2.483v-3.35c0-1.536-.602-2.312-1.802-2.312-1.085 0-1.628.655-1.628 1.944v6.119H4.832V8.284c0-1.289.328-2.313.987-3.07.68-.758 1.569-1.146 2.674-1.146 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.304z" />
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a href="mailto:hello@jrtashjian.com" class="u-email inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </header>
+
+            <main role="main">
+                	<article class="h-entry">
+		<header>
+			<h1 class="p-name">CodeIgniter’s alternator() function</h1>
+			<time class="dt-published mr-3" datetime="2009-10-06T20:00:00-04:00" title="Published on October 7, 2009">October 7, 2009</time>
+			<a class="p-author h-card sr-only" href="http://jrtashjian.com">JR Tashjian</a>
+		</header>
+
+		
+		<div class="e-content">
+			<p>It's surprising to me how often I find little functions for tedious tasks, that <a href="http://codeigniter.com">CodeIgniter</a> already has built in. One of these functions is the <code>alternator()</code> function in the <a href="http://codeigniter.com/user_guide/helpers/string_helper.html">String Helper</a>. To begin using this function, make sure you have loaded the String Helper with the following code:</p>
+
+<pre><code>$this-&gt;load-&gt;helper( 'string' );
+</code></pre>
+
+<p>What the <code>alternator()</code> function does is allow two or more items to be alternated between when iterating through a loop. Example from the CodeIgniter User Guide:</p>
+
+<pre><code>for ( $i = 0; $i &lt; 10; $i++ ) {
+    echo alternator( 'string one', 'string two' );
+}
+</code></pre>
+
+<p>There is also no limit to how many parameters you can have:</p>
+
+<pre><code>echo alternator( 'one', 'two', 'three', 'four', 'five' );
+</code></pre>
+
+<h2>Put it to Use</h2>
+
+<p>What would you ever need that for? Well, what about if you are creating a list of items and every other needs <code>class="alt"</code> attached to it for styling differences? I run into this issue all the time. This is how I used to do it:</p>
+
+<pre><code>&lt;ul&gt;
+    &lt;?php $count = 1; ?&gt;
+    &lt;?php foreach ( $list as $item ) : ?&gt;
+        &lt;?php ( empty( $count ) ) ? $count = 1 : $count = 0; ?&gt;
+        &lt;li &lt;?php echo ( $count == 1 ) ? 'class="alt"' : ''; ?&gt;&gt;
+            &lt;?php echo $item; ?&gt;
+        &lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>And this is with the <code>alternator()</code> function:</p>
+
+<pre><code>&lt;ul&gt;
+    &lt;?php foreach ( $list as $item ) : ?&gt;
+        &lt;li &lt;?php echo alternator( 'class="alt"', '' ); ?&gt;&gt;
+            &lt;?php echo $item; ?&gt;
+        &lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>The <code>alternator()</code> function makes the ability to do this, much easier and cleaner than my original way. Hopefully I've helped someone out who had no idea this function was available.</p>
+		</div>
+	</article>
+            </main>
+
+            <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
+                Copyright (c) 2022 JR Tashjian
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Simple Login Form With CodeIgniter | JR Tashjian</title>
+        <meta name="description" content="Senior Software Engineer">
+
+        <meta property="og:title" content="Simple Login Form With CodeIgniter | JR Tashjian"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jrtashjian.com/2009/02/simple-login-form-with-codeigniter"/>
+        <meta property="og:description" content="Senior Software Engineer" />
+        <meta property="og:image" content="https://jrtashjian.com/assets/images/about-page.webp" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="jrtashjian.com">
+        <meta property="twitter:url" content="https://jrtashjian.com">
+        <meta name="twitter:title" content="Simple Login Form With CodeIgniter | JR Tashjian">
+        <meta name="twitter:description" content="Senior Software Engineer">
+        <meta name="twitter:image" content="https://jrtashjian.com/assets/images/about-page.webp">
+
+
+        <link rel="canonical" href="https://jrtashjian.com/2009/02/simple-login-form-with-codeigniter">
+        <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
+        <link rel="icon" href="/assets/images/favicon-192x192.jpg" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/assets/images/favicon-180x180.jpg" />
+        <meta name="msapplication-TileImage" content="/assets/images/favicon-270x270.jpg" />
+
+                <script defer data-domain="jrtashjian.com" src="https://plausible.jrtashjian.com/js/plausible.js"></script>
+        
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4e5d00fa5633ea52d10317e19903d42b">
+        <script defer src="/assets/build/js/main.js?id=70f6d1d6eeef91fcbf04b0be8a530710"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by JR Tashjian (The RSS Feed)" href="https://jrtashjian.com/feed.xml" />
+    </head>
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
+        <div class="mx-auto max-w-prose">
+
+            <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">
+                <a href="/" title="JR Tashjian home" class="my-2">
+                    <h1 class="font-bold">~/jrtashjian</h1>
+                </a>
+                <div class="h-card flex ml-auto mr-0">
+                    <a href="https://talos.link/@jrtashjian" rel="me" class="u-url inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M23.193 7.879c0-5.206-3.411-6.732-3.411-6.732C18.062.357 15.108.025 12.041 0h-.076c-3.068.025-6.02.357-7.74 1.147 0 0-3.411 1.526-3.411 6.732 0 1.192-.023 2.618.015 4.129.124 5.092.934 10.109 5.641 11.355 2.17.574 4.034.695 5.535.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.129.539c-2.165-.074-4.449-.233-4.799-2.891a5.499 5.499 0 0 1-.048-.745s2.125.52 4.817.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.507.475-6.507zm-4.024 6.709h-2.497V8.469c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.312v3.349h-2.483v-3.35c0-1.536-.602-2.312-1.802-2.312-1.085 0-1.628.655-1.628 1.944v6.119H4.832V8.284c0-1.289.328-2.313.987-3.07.68-.758 1.569-1.146 2.674-1.146 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.304z" />
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a href="mailto:hello@jrtashjian.com" class="u-email inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </header>
+
+            <main role="main">
+                	<article class="h-entry">
+		<header>
+			<h1 class="p-name">Simple Login Form With CodeIgniter</h1>
+			<time class="dt-published mr-3" datetime="2009-02-09T19:00:00-05:00" title="Published on February 10, 2009">February 10, 2009</time>
+			<a class="p-author h-card sr-only" href="http://jrtashjian.com">JR Tashjian</a>
+		</header>
+
+					<div class="alert alert--warning" role="alert">
+				<p>This tutorial is dated. It is important you take care how you store and check a user's password, they should always be stored with one-way encryption. Read more about <a href="http://www.phptherightway.com/#web_application_security">Password Hashing</a>.</p>
+
+			</div>
+		
+		<div class="e-content">
+			<p>One of the most basic but, most important part of a web application is the login form. The login form is the first stage of securing your web application. I will show you how I construct one using the <a href="http://codeigniter.com/user_guide/libraries/encryption.html">Encryption Class</a>, the <a href="http://codeigniter.com/user_guide/libraries/form_validation.html">Form Validation Class</a> and the <a href="http://codeigniter.com/user_guide/libraries/sessions.html">Session Class</a> of <a href="http://codeigniter.com">CodeIgniter</a>.</p>
+
+<p>To begin, we will need to create our view and controller files as well as load the libraries we will be using. I will not be using a database for this tutorial but, rather an array containing the username and password of out user.</p>
+
+<p>For the views, I created a view for the header, the footer, and the login form:</p>
+
+<p><strong>header.php</strong></p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to CodeIgniter&lt;/title&gt;
+
+&lt;style type="text/css"&gt;
+body { background-color:#fff; margin:40px; font-family:Lucida Grande,Verdana,Sans-serif; font-size:14px; color:#4F5155; }
+h1 { color:#444; background-color:transparent; border-bottom:1px solid #D0D0D0; font-size:16px; font-weight:bold; margin:24px 0 2px 0; padding:5px 0 6px 0; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+</code></pre>
+
+<p><strong>footer.php</strong></p>
+
+<pre><code>&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>login_form.php</strong></p>
+
+<pre><code>&lt;h1&gt;Tutorial: Simple Login Form&lt;/h1&gt;
+</code></pre>
+
+<p>Thats it for the views, so far. Next we will create the controller:</p>
+
+<p><strong>main.php</strong></p>
+
+<pre><code>class Main extends Controller {
+
+    function Main() {
+        parent::Controller();
+    }
+
+    function index() {
+        // LOAD LIBRARIES
+        $this-&gt;load-&gt;library( array( 'encrypt', 'form_validation', 'session' ) );
+
+        // LOAD HELPERS
+        $this-&gt;load-&gt;helper( array( 'form' ) );
+
+        // VALID USER CREDENTIALS
+        $user_credentials = array();
+        $user_credentials['testuser1'] = array(
+            'user_name' =&gt; 'testuser1',
+            'user_pass' =&gt; 'Gag/R6LlMz8JKhjd+pkMrL+MUIHn86vjs/ZJ31uH+QRCh1eRxxA0Fve6FXfE7rmFqgqsiwe2ZFrFT8ylZs050A==' // password
+        );
+        $user_credentials['testuser2'] = array(
+            'user_name' =&gt; 'testuser2',
+            'user_pass' =&gt; 'Gag/R6LlMz8JKhjd+pkMrL+MUIHn86vjs/ZJ31uH+QRCh1eRxxA0Fve6FXfE7rmFqgqsiwe2ZFrFT8ylZs050A==' // password
+        );
+        $user_credentials['testuser3'] = array(
+            'user_name' =&gt; 'testuser3',
+            'user_pass' =&gt; 'Gag/R6LlMz8JKhjd+pkMrL+MUIHn86vjs/ZJ31uH+QRCh1eRxxA0Fve6FXfE7rmFqgqsiwe2ZFrFT8ylZs050A==' // password
+        );
+
+        $this-&gt;load-&gt;view( 'header' );
+        $this-&gt;load-&gt;view( 'login_form' );
+        $this-&gt;load-&gt;view( 'footer' );
+    }
+
+}
+
+/* End of file main.php */
+/* Location: ./application/controllers/main.php */
+</code></pre>
+
+<p>As you can see in the above code, I have already encrypted a password. To create an encrypted password from a string all you need to do is call <code>encode()</code> from the encryption class, like so:</p>
+
+<pre><code>echo $this-&gt;encrypt-&gt;encode( 'password' );
+</code></pre>
+
+<h2>Building the Form</h2>
+
+<p>After setting up the files as described above, we now need to create the form so our users can login. I will be using the <a href="http://codeigniter.com/user_guide/helpers/form_helper.html">Form Helper</a> that CodeIgniter provides us with instead of writing out the html. I will be creating this form inside the <code>login_form.php</code> view:</p>
+
+<p><strong>login_form.php</strong></p>
+
+<pre><code>&lt;h1&gt;Tutorial: Simple Login Form&lt;/h1&gt;
+
+&lt;?php if ( $this-&gt;session-&gt;flashdata( 'message' ) ) : ?&gt;
+    &lt;p&gt;&lt;?php echo $this-&gt;session-&gt;flashdata( 'message' ); ?&gt;&lt;/p&gt;
+&lt;?php endif; ?&gt;
+
+&lt;?php echo form_open( 'main/index/' ); ?&gt;
+    &lt;?php echo form_fieldset( 'Login Form' ); ?&gt;
+
+        &lt;div class="textfield"&gt;
+            &lt;?php echo form_label( 'username', 'user_name' ); ?&gt;
+            &lt;?php echo form_input( 'user_name' ); ?&gt;
+        &lt;/div&gt;
+
+        &lt;div class="textfield"&gt;
+            &lt;?php echo form_label( 'password', 'user_pass' ); ?&gt;
+            &lt;?php echo form_password( 'user_pass' ); ?&gt;
+        &lt;/div&gt;
+
+        &lt;div class="buttons"&gt;
+            &lt;?php echo form_submit( 'login', 'Login' ); ?&gt;
+        &lt;/div&gt;
+
+    &lt;?php echo form_fieldset_close(); ?&gt;
+&lt;?php echo form_close(); ?&gt;
+</code></pre>
+
+<p>You probably noticed I am using PHP <a href="http://codeigniter.com/user_guide/general/alternative_php.html">short tag syntax</a> which, I prefer to use. If you choose not to use short tag syntax instead of writing this:</p>
+
+<pre><code>&lt;?php echo form_input( 'user_name' ); ?&gt;
+</code></pre>
+
+<p>you would write this:</p>
+
+<pre><code>&lt;?php echo form_input( 'user_name' ); ?&gt;
+</code></pre>
+
+<p>Whatever suits your coding style, stick to it and be consistent throughout your code. I have also added a check to see if the <a href="http://codeigniter.com/user_guide/libraries/sessions.html">Flashdata</a> 'message' has been set. I like to use flashdata for temporary messages because any flashdata vars set will only be available for the next server request, and are then deleted or cleared. I will be using this to notify the user of an incorrect password, on successful login, and if a user has not been found.</p>
+
+<h2>Submitting the Form</h2>
+
+<p>Now that we have our form created, we need to make it work! So, open up that controller and lets put some code in there.</p>
+
+<p>The first thing we must do upon submitting a form is to validate the data. CodeIgniter's Form Validation Class makes this really easy, all we have to do is set some rules:</p>
+
+<pre><code>// SET VALIDATION RULES
+$this-&gt;form_validation-&gt;set_rules( 'user_name', 'username', 'required' );
+$this-&gt;form_validation-&gt;set_rules( 'user_pass', 'password', 'required' );
+$this-&gt;form_validation-&gt;set_error_delimiters( '&lt;em&gt;','&lt;/em&gt;' );
+</code></pre>
+
+<p>The first parameter of <code>$this-&gt;form_validation-&gt;set_rules()</code> is the field name we set in html. The second parameter is what you would call the field in the error message (eg. The <code>username</code> field is a required field). The third parameter is the rule reference and defines what the field data should contain. We will not be doing anything special so, 'required' works for what we need to accomplish because all we need to check is if the field was filled in. I have also set the error message delimiters which again, is just personal preference. You can keep them as default or use different delimiters.</p>
+
+<p>In order for us to validate the form we need to check to see if it has been submitted and then validate the form. If the form validates, we continue processing the submitted credentials if not, we display the error messages and the user can try to submit the form again.</p>
+
+<pre><code>// SET VALIDATION RULES
+$this-&gt;form_validation-&gt;set_rules( 'user_name', 'username', 'required' );
+$this-&gt;form_validation-&gt;set_rules( 'user_pass', 'password', 'required' );
+$this-&gt;form_validation-&gt;set_error_delimiters( '&lt;em&gt;','&lt;/em&gt;' );
+
+// has the form been submitted and with valid form info (not empty values)
+if ( $this-&gt;input-&gt;post( 'login' ) ) {
+    if ( $this-&gt;form_validation-&gt;run() ) {
+        // form submitted and validated continue processing
+    }
+}
+</code></pre>
+
+<p>If the form does not validate, <code>$this-&gt;form_validation-&gt;run()</code> will return FALSE and terminate the if-statement. The controller will then finish executing but, we still need to notify the user of any errors! When a form fails to validate, CodeIgniters Form Validation Class generates the error messages or messages and we can display them the way we choose on the view. CodeIgniter allows us to output these messages either in a block format (all messages in one place) or individually. I prefer to display them individually and right where the form element that had the error. To do that, we need to update out <code>login_form.php</code> view. We will be inserting the <code>form_error()</code> function which only needs one parameter; the name of our form element. We also will need to re-populate the form with the submitted data so the user can see what went wrong and also so the user does not have to re-type all the info back into the form. To do this, we will place the <code>set_value()</code> funtion inside the <code>form_input()</code> function</p>
+
+<pre><code>&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( 'username', 'user_name' ); ?&gt;
+    &lt;?php echo form_error( 'user_name' ); ?&gt;
+    &lt;?php echo form_input( 'user_name', set_value( 'user_name' ) ); ?&gt;
+&lt;/div&gt;
+
+&lt;div class="textfield"&gt;
+    &lt;?php echo form_label( 'password', 'user_pass' ); ?&gt;
+    &lt;?php echo form_error( 'user_pass' ); ?&gt;
+    &lt;?php echo form_password( 'user_pass' ); ?&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Now when a user submits a form with no information or with missing information, they will be denied access and informed about the error. They can then fix the errors and re-submit until they get it right.</p>
+
+<h2>Validating The User</h2>
+
+<p>Once the user has submitted a valid form we then need to check if the user is a valid user or not. If the user is a valid user, we will then continue processing if not, an error message will be displayed and the user will be returned to the login form. We will be displaying this error message using Flashdata.</p>
+
+<pre><code>// has the form been submitted and with valid form info (not empty values)
+if ( $this-&gt;input-&gt;post( 'login' ) ) {
+    if ( $this-&gt;form_validation-&gt;run() ) {
+        $user_name = $this-&gt;input-&gt;post( 'user_name' );
+        $user_pass = $this-&gt;input-&gt;post( 'user_pass' );
+
+        if ( array_key_exists( $user_name, $user_credentials ) ) {
+            // continue processing form (validate password)
+        } else {
+            $this-&gt;session-&gt;set_flashdata( 'message', 'A user does not exist for the username specified.' );
+            redirect( 'main/index/' );
+        }
+    }
+}
+</code></pre>
+
+<p>Once the user has submitted credentials for a valid user, we will then check the submitted password against the stored password to see if they match we will allow the user to login and use the application. If the passwords do not match, we will display another message notifying the user of the error and then return the user back to the login form.</p>
+
+<pre><code>// has the form been submitted and with valid form info (not empty values)
+if ( $this-&gt;input-&gt;post( 'login' ) ) {
+    if ( $this-&gt;form_validation-&gt;run() ) {
+        $user_name = $this-&gt;input-&gt;post( 'user_name' );****
+        $user_pass = $this-&gt;input-&gt;post( 'user_pass' );
+
+        if ( array_key_exists( $user_name, $user_credentials ) ) {
+            if ( $user_pass == $this-&gt;encrypt-&gt;decode( $user_credentials[ $user_name ]['user_pass'] ) ) {
+                // user has been logged in
+                die( "USER LOGGED IN!" );
+            } else {
+                $this-&gt;session-&gt;set_flashdata( 'message', 'Incorrect password.' );
+                redirect( 'main/index/' );
+            }
+        } else {
+            $this-&gt;session-&gt;set_flashdata( 'message', 'A user does not exist for the username specified.' );
+            redirect( 'main/index/' );
+        }
+    }
+}
+</code></pre>
+
+<p>Well, there you have it. A simple and easy login form created using CodeIgniter. Even though I used an array to store user credentials, it would be really easy to modify the code for use with a database.</p>
+
+<p>You can <a href="https://jrtashjian.com/wp-content/uploads/2009/02/simple-login-form-with-codeigniter.zip">download the demo</a> here.</p>
+
+<p>Remember, you still need to update the variable <code>$config['base_url']</code> inside the <code>./application/config/config.php</code> file.</p>
+		</div>
+	</article>
+            </main>
+
+            <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
+                Copyright (c) 2022 JR Tashjian
+            </footer>
+        </div>
+    </body>
+</html>
