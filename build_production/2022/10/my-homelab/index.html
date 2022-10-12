@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>My Homelab | JR Tashjian</title>
+        <meta name="description" content="Senior Software Engineer">
+
+        <meta property="og:title" content="My Homelab | JR Tashjian"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jrtashjian.com/2022/10/my-homelab"/>
+        <meta property="og:description" content="Senior Software Engineer" />
+        <meta property="og:image" content="https://jrtashjian.com/assets/images/about-page.webp" />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="jrtashjian.com">
+        <meta property="twitter:url" content="https://jrtashjian.com">
+        <meta name="twitter:title" content="My Homelab | JR Tashjian">
+        <meta name="twitter:description" content="Senior Software Engineer">
+        <meta name="twitter:image" content="https://jrtashjian.com/assets/images/about-page.webp">
+
+
+        <link rel="canonical" href="https://jrtashjian.com/2022/10/my-homelab">
+        <link rel="icon" href="/assets/images/favicon-32x32.jpg" sizes="32x32" />
+        <link rel="icon" href="/assets/images/favicon-192x192.jpg" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/assets/images/favicon-180x180.jpg" />
+        <meta name="msapplication-TileImage" content="/assets/images/favicon-270x270.jpg" />
+
+                <script defer data-domain="jrtashjian.com" src="https://plausible.jrtashjian.com/js/plausible.js"></script>
+        
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4e5d00fa5633ea52d10317e19903d42b">
+        <script defer src="/assets/build/js/main.js?id=70f6d1d6eeef91fcbf04b0be8a530710"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="All Posts by JR Tashjian (The RSS Feed)" href="https://jrtashjian.com/feed.xml" />
+    </head>
+    <body class="bg-white dark:bg-black text-black dark:text-white font-mono leading-relaxed px-4">
+        <div class="mx-auto max-w-prose">
+
+            <header class="flex flex-wrap mb-8 py-8 border-b-8 border-black dark:border-white" role="banner">
+                <a href="/" title="JR Tashjian home" class="my-2">
+                    <h1 class="font-bold">~/jrtashjian</h1>
+                </a>
+                <div class="h-card flex ml-auto mr-0">
+                    <a href="https://talos.link/@jrtashjian" rel="me" class="u-url inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M23.193 7.879c0-5.206-3.411-6.732-3.411-6.732C18.062.357 15.108.025 12.041 0h-.076c-3.068.025-6.02.357-7.74 1.147 0 0-3.411 1.526-3.411 6.732 0 1.192-.023 2.618.015 4.129.124 5.092.934 10.109 5.641 11.355 2.17.574 4.034.695 5.535.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.129.539c-2.165-.074-4.449-.233-4.799-2.891a5.499 5.499 0 0 1-.048-.745s2.125.52 4.817.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.507.475-6.507zm-4.024 6.709h-2.497V8.469c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.312v3.349h-2.483v-3.35c0-1.536-.602-2.312-1.802-2.312-1.085 0-1.628.655-1.628 1.944v6.119H4.832V8.284c0-1.289.328-2.313.987-3.07.68-.758 1.569-1.146 2.674-1.146 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.304z" />
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a href="mailto:hello@jrtashjian.com" class="u-email inline-flex ml-3 my-2">
+                        <svg class="mr-2 fill-current" width="24" height="24" view-box="0 0 24 24" version="1.1">
+                            <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </header>
+
+            <main role="main">
+                	<article class="h-entry">
+		<header>
+			<h1 class="p-name">My Homelab</h1>
+			<time class="dt-published mr-3" datetime="2022-10-11T20:00:00-04:00" title="Published on October 12, 2022">October 12, 2022</time>
+			<a class="p-author h-card sr-only" href="http://jrtashjian.com">JR Tashjian</a>
+		</header>
+
+		
+		<div class="e-content">
+			<p>In February 2021, I purchased my first enterprise grade rack-mounted server. I had a simple reason for doing so: I wanted better resiliency for my important digital archives, and the ability to run an extra service or two alongside it. Now a year and a half later I have a 18U server rack with multiple servers and many self-hosted services.</p>
+
+<p>I've been fascinated with computer hardware since I was a child. It was said that my grandfather used to say "computers will never take off" only to later run an entire business selling and repairing them until he passed. He was a driving force for my interest and going to his little computer shop and tinkering or going out with him on jobs was my favorite thing to do.</p>
+
+<p>Although my interest was in hardware I ended up going the software development route and hardware became secondary. I still build my own computers and doing the research to learn about new hardware. But when it comes to self-hosting I've always been of the mindset that we should own our data and that stance is justified more and more each day a product or service is shutdown, personal and private data is found to be used in undisclosed ways, or when any person is cutoff from their data for any reason or whim.</p>
+
+<h2>The Journey</h2>
+
+<p>My homelab journey began by simply wanting a better file backup system for my photo library and important digitized documents. Like most people I started with just some USB hard drives to make sure I had a second copy as well as a mixture of third-party services that I didn't utilize entirely (Google Drive/Photos, iCloud, and Dropbox). To improve my setup I bought a <a href="https://products.wdc.com/library/AAG/ENG/4078-705150.pdf">WD EX2100 NAS system</a> which provided similar software for easily syncing documents and photos from my desktop, laptop, and phone to my own drives. This also began my journey into a RAID system for increasing resiliency (RAID is not a backup!) with a simple 6TB mirrored drive configuration.</p>
+
+<p>That system ran well for a many years but when I started tinkering I figured out that the NAS had a way to install applications such as <a href="https://www.plex.tv/">Plex Media Server</a> and with some work I was also able to gain shell access and get <a href="https://www.docker.com/">Docker</a> running. As my data needs grew and my tinkering increased I realized the dual-core ARM processor and 1GB of memory was no longer working for me.</p>
+
+<h2>The Upgrade</h2>
+
+<p>For some reason I thought enterprise gear was unattainable because of it's enormous cost. When looking at sites like Dell, the cost of a single server can easily go into the thousands of dollars. I don't even remember how but I ran across the subreddit <a href="https://www.reddit.com/r/homelab">r/homelab</a> and <a href="https://www.reddit.com/r/selfhosted">r/selfhosted</a> and was exposed to many more open source projects I could host myself and an entire community who re-purpose decommissioned enterprise server gear for their own homelabs. I consumed as much information as I could and dreamed about server racks in my house running all sorts of things! But I knew I had to start small and there was a lot more I needed to learn along the way. I picked up a Dell R210 II to eventually become a router and a Dell R420 to become my new NAS server. I also had an older MacBook Pro and MacBook Air laying around that I started using as Docker hosts.</p>
+
+<p><a href="/assets/images/homelab-2021-02.webp"><img src="/assets/images/homelab-2021-02.webp" alt="" title="A Dell Poweredge R210 II, Dell Poweredge R420, and Apple MacBooks stacked on top of each other" /></a></p>
+
+<h2>Current setup</h2>
+
+<p>Almost two years later I've purchased a server rack to hold everything, a disk shelf to increase my storage capacity, and a couple more servers to tinker and host services.</p>
+
+<p><a href="/assets/images/homelab-2022-08.webp"><img src="/assets/images/homelab-2022-08.webp" alt="" title="The front and back view of an 18U server rack with servers and networking equipment within" /></a></p>
+
+<h3>Dell PowerEdge R210 II</h3>
+
+<ul>
+<li>Intel Xeon E3-1230 3.20 GHz (4 cores / 8 threads)</li>
+<li>16 GB Memory (PC3-12800R)</li>
+</ul>
+
+<p>This server is running <a href="https://www.proxmox.com/en/proxmox-ve">Proxmox</a> for virtualization and is focused on the essential services required for the network. I’m running <a href="https://opnsense.org">OPNsense</a> as my network router and firewall, <a href="https://goauthentik.io">Authentik</a> as the Identity Provider for my self-hosted services, and a virtual machine Docker host running <a href="https://github.com/pawelmalak/flame">Flame</a> and <a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a>.</p>
+
+<h3>Dell PowerEdge R420</h3>
+
+<ul>
+<li>2x Intel Xeon E5-2430 2.20 GHz (6 cores / 12 threads)</li>
+<li>96 GB Memory (PC3-10600R)</li>
+<li>4x 3TB 7.2k SAS 3.5" HDD</li>
+</ul>
+
+<p>This server is running <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> and using ZFS for RAID. The four drives in the system are configured as a raidz2 pool. This pool mirrors the most important data from the NetApp DS4246 (which is directly connected to the R420). This data is also sent encrypted to <a href="https://www.backblaze.com/">BackBlaze</a> as my offsite backup.</p>
+
+<p>Because this server is for storage I decided it would be best to have a virtual machine running Plex and use TrueNAS Scale’s docker setup to run the various <a href="https://wiki.servarr.com">Servarr</a> apps. The goal was to prevent unecessary network bandwidth being utilized for operations other than serving media to devices.</p>
+
+<h3>NetApp DS4246</h3>
+
+<ul>
+<li>12x 3TB 7.2k SAS 3.5" HDD</li>
+</ul>
+
+<p>There are twenty-four 3.5" HDD bays available but only twelve are currently active. This disk-shelf is connected to the R420 and is configured as a raidz1 pool with 2x vdevs consisting of 6x 3TB drives.</p>
+
+<p>Why do I need so much storage? I don’t utilize it all right now but in planning my homelab I imagined setting up pull-through caches for package repositories that I use for day-to-day development such as Docker images, composer packages, and npm packages. I’m also interested in setting up <a href="https://lancache.net">LAN Cache</a> for caching game downloads.</p>
+
+<h3>Dell PowerEdge R620 (x2)</h3>
+
+<ul>
+<li>2x Intel Xeon E5-2650 v2 2.60 GHz (8 cores / 16 threads)</li>
+<li>128 GB Memory (PC3-12800R)</li>
+<li>2x 146 GB 15k SAS 2.5" HDD</li>
+<li>6x 500 GB 7.2k SAS 2.5" HDD</li>
+</ul>
+
+<p>These two servers are for primary compute and are setup as a two-node cluster using Proxmox. I run a number of <a href="https://linuxcontainers.org">LXC containers</a> and a couple VMs running Docker for various services. Services like <a href="https://mariadb.com">MariaDB</a>, <a href="https://grafana.com">Grafana</a>, <a href="https://gitea.io/">Gitea</a> with <a href="https://www.drone.io">Drone</a>, with many more to come. I run a handful of Minecraft servers for friends and family using <a href="https://papermc.io">PaperMC</a>, <a href="https://github.com/PaperMC/Waterfall">Waterfall</a> for connecting all of them, and <a href="https://geysermc.org">GeyserMC</a> to allow Java and Bedrock clients to connect. And finally I run a few instances of <a href="https://cmangos.net">CMaNGOS</a> for World of Warcraft Vanilla, The Burning Crusade, and Wrath of the Lich King privately using the <a href="https://github.com/jrtashjian/cmangos-docker">Docker images I’ve published</a>.</p>
+
+<p>There are future plans to add a third node to this cluster and maybe play around with Ceph and High-Availability built-in to Proxmox.</p>
+
+<h3>Apple MacBook Pro (MacBookPro11,1)</h3>
+
+<ul>
+<li>Intel Core i7-4558U 2.80 GHz (2 cores / 4 threads)</li>
+<li>8 GB Memory</li>
+</ul>
+
+<p>This old laptop is used for the occasional time I want or need access to Mac OS. I can (and have) virtualized Mac OS with Proxmox but it’s significantly less effort to just have a physical device ready to go.</p>
+
+<h3>Not Pictured</h3>
+
+<p>I have a <a href="https://www.tripplite.com/support/SMART1500LCDT">TrippLite UPS</a> that is not rack-mountable with the PDU plugged into it. I plan to purchase 2x 2U rack-mountable UPS’s in the future and place them at the bottom of the rack while splitting the load between them. I also pick up a new Microtik Managed Switch (<a href="https://mikrotik.com/product/CSS326-24G-2SplusRM">CSS326-24G-2S+RM</a>) to replace the three <a href="https://www.linksys.com/8-port-gigabit-ethernet-switch-se3008/SE3008.html">8-port Linksys SE3008</a> switches I’m currently using to separate subnets.</p>
+
+<h2>Linode</h2>
+
+<p>I've been with <a href="https://www.linode.com/">Linode</a> for as long as I've been developing professionally and I personally love the service and support they offer. Although I host things at home I have been self-hosting things on Linode and continue to. For instance I host a <a href="https://joinmastodon.org/">Mastodon</a> instance for friends and family as well as a full-fledged email server. Linode provides a great interface for managing each server and allows me to easily update DNS records using their <a href="https://www.linode.com/docs/guides/dns-manager/">DNS Manager</a>. I even have <a href="https://docs.opnsense.org/manual/dynamic_dns.html">dynamic dns setup using Linode and OPNSense</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>I love tinkering with my homelab and finding a balance between the complexity of hosting things and owning my data while trying to limit the maintenance burden of it all. If this kind of stuff is interesting to you take a look at the <a href="https://www.reddit.com/r/homelab/wiki/introduction/">introduction post on r/homelab</a>. You can get started using an old computer, your current computer using virtual machines, or a <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. Be careful though! You may also end up with a server rack in your home.</p>
+		</div>
+	</article>
+            </main>
+
+            <footer class="flex justify-end mt-8 py-8 border-t-8 border-black dark:border-white" role="contentinfo">
+                Copyright (c) 2022 JR Tashjian
+            </footer>
+        </div>
+    </body>
+</html>

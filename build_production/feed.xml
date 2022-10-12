@@ -7,8 +7,105 @@
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://jrtashjian.com/feed.xml" type="application/rss+xml" rel="self"/>
     <language>en-US</language>
     <copyright>Copyright (c) JR Tashjian 2022</copyright>
-    <pubDate>Sun, 28 Aug 2022 15:30:13 -0400</pubDate>
-    <lastBuildDate>Sun, 28 Aug 2022 15:30:13 -0400</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2022 11:04:37 -0400</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2022 11:04:37 -0400</lastBuildDate>
+    <item>
+      <title><![CDATA[My Homelab]]></title>
+      <link>https://jrtashjian.com/2022/10/my-homelab</link>
+      <description><![CDATA[In February 2021, I purchased my first enterprise grade rack-mounted server. I had a simple reason for doing so: I wanted better resiliency for my important digital archives, and the ability to run an extra service or two alongside it. Now a year and a...]]></description>
+      <content:encoded><![CDATA[<p>In February 2021, I purchased my first enterprise grade rack-mounted server. I had a simple reason for doing so: I wanted better resiliency for my important digital archives, and the ability to run an extra service or two alongside it. Now a year and a half later I have a 18U server rack with multiple servers and many self-hosted services.</p>
+
+<p>I've been fascinated with computer hardware since I was a child. It was said that my grandfather used to say "computers will never take off" only to later run an entire business selling and repairing them until he passed. He was a driving force for my interest and going to his little computer shop and tinkering or going out with him on jobs was my favorite thing to do.</p>
+
+<p>Although my interest was in hardware I ended up going the software development route and hardware became secondary. I still build my own computers and doing the research to learn about new hardware. But when it comes to self-hosting I've always been of the mindset that we should own our data and that stance is justified more and more each day a product or service is shutdown, personal and private data is found to be used in undisclosed ways, or when any person is cutoff from their data for any reason or whim.</p>
+
+<h2>The Journey</h2>
+
+<p>My homelab journey began by simply wanting a better file backup system for my photo library and important digitized documents. Like most people I started with just some USB hard drives to make sure I had a second copy as well as a mixture of third-party services that I didn't utilize entirely (Google Drive/Photos, iCloud, and Dropbox). To improve my setup I bought a <a href="https://products.wdc.com/library/AAG/ENG/4078-705150.pdf">WD EX2100 NAS system</a> which provided similar software for easily syncing documents and photos from my desktop, laptop, and phone to my own drives. This also began my journey into a RAID system for increasing resiliency (RAID is not a backup!) with a simple 6TB mirrored drive configuration.</p>
+
+<p>That system ran well for a many years but when I started tinkering I figured out that the NAS had a way to install applications such as <a href="https://www.plex.tv/">Plex Media Server</a> and with some work I was also able to gain shell access and get <a href="https://www.docker.com/">Docker</a> running. As my data needs grew and my tinkering increased I realized the dual-core ARM processor and 1GB of memory was no longer working for me.</p>
+
+<h2>The Upgrade</h2>
+
+<p>For some reason I thought enterprise gear was unattainable because of it's enormous cost. When looking at sites like Dell, the cost of a single server can easily go into the thousands of dollars. I don't even remember how but I ran across the subreddit <a href="https://www.reddit.com/r/homelab">r/homelab</a> and <a href="https://www.reddit.com/r/selfhosted">r/selfhosted</a> and was exposed to many more open source projects I could host myself and an entire community who re-purpose decommissioned enterprise server gear for their own homelabs. I consumed as much information as I could and dreamed about server racks in my house running all sorts of things! But I knew I had to start small and there was a lot more I needed to learn along the way. I picked up a Dell R210 II to eventually become a router and a Dell R420 to become my new NAS server. I also had an older MacBook Pro and MacBook Air laying around that I started using as Docker hosts.</p>
+
+<p><a href="/assets/images/homelab-2021-02.webp"><img src="/assets/images/homelab-2021-02.webp" alt="" title="A Dell Poweredge R210 II, Dell Poweredge R420, and Apple MacBooks stacked on top of each other" /></a></p>
+
+<h2>Current setup</h2>
+
+<p>Almost two years later I've purchased a server rack to hold everything, a disk shelf to increase my storage capacity, and a couple more servers to tinker and host services.</p>
+
+<p><a href="/assets/images/homelab-2022-08.webp"><img src="/assets/images/homelab-2022-08.webp" alt="" title="The front and back view of an 18U server rack with servers and networking equipment within" /></a></p>
+
+<h3>Dell PowerEdge R210 II</h3>
+
+<ul>
+<li>Intel Xeon E3-1230 3.20 GHz (4 cores / 8 threads)</li>
+<li>16 GB Memory (PC3-12800R)</li>
+</ul>
+
+<p>This server is running <a href="https://www.proxmox.com/en/proxmox-ve">Proxmox</a> for virtualization and is focused on the essential services required for the network. I’m running <a href="https://opnsense.org">OPNsense</a> as my network router and firewall, <a href="https://goauthentik.io">Authentik</a> as the Identity Provider for my self-hosted services, and a virtual machine Docker host running <a href="https://github.com/pawelmalak/flame">Flame</a> and <a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a>.</p>
+
+<h3>Dell PowerEdge R420</h3>
+
+<ul>
+<li>2x Intel Xeon E5-2430 2.20 GHz (6 cores / 12 threads)</li>
+<li>96 GB Memory (PC3-10600R)</li>
+<li>4x 3TB 7.2k SAS 3.5" HDD</li>
+</ul>
+
+<p>This server is running <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> and using ZFS for RAID. The four drives in the system are configured as a raidz2 pool. This pool mirrors the most important data from the NetApp DS4246 (which is directly connected to the R420). This data is also sent encrypted to <a href="https://www.backblaze.com/">BackBlaze</a> as my offsite backup.</p>
+
+<p>Because this server is for storage I decided it would be best to have a virtual machine running Plex and use TrueNAS Scale’s docker setup to run the various <a href="https://wiki.servarr.com">Servarr</a> apps. The goal was to prevent unecessary network bandwidth being utilized for operations other than serving media to devices.</p>
+
+<h3>NetApp DS4246</h3>
+
+<ul>
+<li>12x 3TB 7.2k SAS 3.5" HDD</li>
+</ul>
+
+<p>There are twenty-four 3.5" HDD bays available but only twelve are currently active. This disk-shelf is connected to the R420 and is configured as a raidz1 pool with 2x vdevs consisting of 6x 3TB drives.</p>
+
+<p>Why do I need so much storage? I don’t utilize it all right now but in planning my homelab I imagined setting up pull-through caches for package repositories that I use for day-to-day development such as Docker images, composer packages, and npm packages. I’m also interested in setting up <a href="https://lancache.net">LAN Cache</a> for caching game downloads.</p>
+
+<h3>Dell PowerEdge R620 (x2)</h3>
+
+<ul>
+<li>2x Intel Xeon E5-2650 v2 2.60 GHz (8 cores / 16 threads)</li>
+<li>128 GB Memory (PC3-12800R)</li>
+<li>2x 146 GB 15k SAS 2.5" HDD</li>
+<li>6x 500 GB 7.2k SAS 2.5" HDD</li>
+</ul>
+
+<p>These two servers are for primary compute and are setup as a two-node cluster using Proxmox. I run a number of <a href="https://linuxcontainers.org">LXC containers</a> and a couple VMs running Docker for various services. Services like <a href="https://mariadb.com">MariaDB</a>, <a href="https://grafana.com">Grafana</a>, <a href="https://gitea.io/">Gitea</a> with <a href="https://www.drone.io">Drone</a>, with many more to come. I run a handful of Minecraft servers for friends and family using <a href="https://papermc.io">PaperMC</a>, <a href="https://github.com/PaperMC/Waterfall">Waterfall</a> for connecting all of them, and <a href="https://geysermc.org">GeyserMC</a> to allow Java and Bedrock clients to connect. And finally I run a few instances of <a href="https://cmangos.net">CMaNGOS</a> for World of Warcraft Vanilla, The Burning Crusade, and Wrath of the Lich King privately using the <a href="https://github.com/jrtashjian/cmangos-docker">Docker images I’ve published</a>.</p>
+
+<p>There are future plans to add a third node to this cluster and maybe play around with Ceph and High-Availability built-in to Proxmox.</p>
+
+<h3>Apple MacBook Pro (MacBookPro11,1)</h3>
+
+<ul>
+<li>Intel Core i7-4558U 2.80 GHz (2 cores / 4 threads)</li>
+<li>8 GB Memory</li>
+</ul>
+
+<p>This old laptop is used for the occasional time I want or need access to Mac OS. I can (and have) virtualized Mac OS with Proxmox but it’s significantly less effort to just have a physical device ready to go.</p>
+
+<h3>Not Pictured</h3>
+
+<p>I have a <a href="https://www.tripplite.com/support/SMART1500LCDT">TrippLite UPS</a> that is not rack-mountable with the PDU plugged into it. I plan to purchase 2x 2U rack-mountable UPS’s in the future and place them at the bottom of the rack while splitting the load between them. I also pick up a new Microtik Managed Switch (<a href="https://mikrotik.com/product/CSS326-24G-2SplusRM">CSS326-24G-2S+RM</a>) to replace the three <a href="https://www.linksys.com/8-port-gigabit-ethernet-switch-se3008/SE3008.html">8-port Linksys SE3008</a> switches I’m currently using to separate subnets.</p>
+
+<h2>Linode</h2>
+
+<p>I've been with <a href="https://www.linode.com/">Linode</a> for as long as I've been developing professionally and I personally love the service and support they offer. Although I host things at home I have been self-hosting things on Linode and continue to. For instance I host a <a href="https://joinmastodon.org/">Mastodon</a> instance for friends and family as well as a full-fledged email server. Linode provides a great interface for managing each server and allows me to easily update DNS records using their <a href="https://www.linode.com/docs/guides/dns-manager/">DNS Manager</a>. I even have <a href="https://docs.opnsense.org/manual/dynamic_dns.html">dynamic dns setup using Linode and OPNSense</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>I love tinkering with my homelab and finding a balance between the complexity of hosting things and owning my data while trying to limit the maintenance burden of it all. If this kind of stuff is interesting to you take a look at the <a href="https://www.reddit.com/r/homelab/wiki/introduction/">introduction post on r/homelab</a>. You can get started using an old computer, your current computer using virtual machines, or a <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. Be careful though! You may also end up with a server rack in your home.</p>
+]]></content:encoded>
+      <guid>https://jrtashjian.com/2022/10/my-homelab</guid>
+      <pubDate>Tue, 11 Oct 2022 20:00:00 -0400</pubDate>
+      <author>JR Tashjian</author>
+    </item>
     <item>
       <title><![CDATA[Featured Image Fallback for Child Pages]]></title>
       <link>https://jrtashjian.com/2017/05/featured-image-fallback-for-child-pages</link>
