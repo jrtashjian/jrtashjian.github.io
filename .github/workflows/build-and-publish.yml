@@ -37,7 +37,7 @@ jobs:
           npm run prod
 
       - name: Upload artifact
-        uses: actions/upload-pages-artiface@v1
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./build_production
 
