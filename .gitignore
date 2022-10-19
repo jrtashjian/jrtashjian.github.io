@@ -6,5 +6,6 @@
 /.vscode/
 npm-debug.log
 
+/build_production/
 /build_staging/
 /source/assets/build/
