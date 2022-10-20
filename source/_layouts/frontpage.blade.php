@@ -10,6 +10,7 @@
 	<section>
 		<ul>
 			<li><a href="/archive">/Archive</a></li>
+			<li><a href="/uses">/Uses</a></li>
 			<li><a href="/now">/Now</a></li>
 		</ul>
 	</section>
