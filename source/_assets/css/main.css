@@ -6,7 +6,7 @@
 @import 'highlight.js/styles/a11y-dark.css' (prefers-color-scheme: dark );
 
 @layer base {
-	a { @apply underline hover:no-underline focus:no-underline text-blue-500 dark:text-yellow-300; }
+	a { @apply underline underline-offset-2 decoration-2 hover:no-underline focus:no-underline text-blue-500 dark:text-yellow-300; }
 	p, pre, ol, ul, img {
 		@apply my-4;
 	}
