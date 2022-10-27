@@ -1,7 +1,7 @@
 ---
 extends: _layouts.page
 title: What I'm doing now
-date: 2022-10-20
+date: 2022-10-27
 ---
 ## Life
 I am a thinker and one idea that I continue to ponder each day has spawned from a quote during an [interview with Tim Mackie](https://www.youtube.com/watch?v=b6c_av6mT38) of [The Bible Project](https://bibleproject.com/). This was in response to a question about how we frame our life with Jesus in our day-to-day.
@@ -13,4 +13,4 @@ I am a thinker and one idea that I continue to ponder each day has spawned from 
 Many of our problems as humans are self-inflicted and cause the destruction we lament. What's difficult to determine are the roles we play and the beings we parter with (intentionally or unintentionally) to bring about "good" according to our own definition.
 
 ## Work
-I'm working at [GoDaddy](https://godaddy.com) alongside an amazing team to build the best experiences we can. Most of my job is experimenting with the [Block Editor](https://github.com/WordPress/gutenberg) in [WordPress](https://wordpress.org/) for internal projects which may eventually become open source as well as [many already open source projects](https://github.com/godaddy-wordpress) such as [CoBlocks](https://github.com/godaddy-wordpress/coblocks) and the [Go](https://github.com/godaddy-wordpress/go) theme.
+I'm working at [GoDaddy](https://godaddy.com) alongside an amazing team to build the best experiences we can. Most of my job is experimenting with the [Block Editor](https://github.com/WordPress/gutenberg) in [WordPress](https://wordpress.org/) for internal projects which may eventually become open source as well as [many already open source projects](https://github.com/godaddy-wordpress) such as [CoBlocks](https://github.com/godaddy-wordpress/coblocks) and the [Go](https://github.com/godaddy-wordpress/go) theme. My focus right now is practicing and learning how to be better at leading multiple projects and team members, planning and time management to manage expectations, and communication to round it all out. I'm being challenged each day and that drives me to give everything I have.
