@@ -14,4 +14,12 @@
 			<li><a href="/now">/Now</a></li>
 		</ul>
 	</section>
+
+	<section>
+		<ul>
+			<li>
+				<a href="https://omniform.io"><img src="/assets/images/project-omniform.webp" alt="OmniForm" /></a>
+			</li>
+		</ul>
+	</section>
 @endsection
