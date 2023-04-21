@@ -16,7 +16,14 @@
 	}
 	pre code { @apply block overflow-x-scroll py-4; }
 	*:focus-visible {
-		outline: auto;
+		@apply bg-blue-500 dark:bg-yellow-300 text-white dark:text-black;
+		outline: 4px solid theme('colors.blue.500');
+
+	}
+	@media (prefers-color-scheme: dark) {
+		*:focus-visible {
+			outline-color: theme('colors.yellow.300');
+		}
 	}
 }
 
