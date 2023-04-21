@@ -1,7 +1,7 @@
 ---
 extends: _layouts.page
 title: /Uses
-date: 2022-10-26
+date: 2023-04-20
 ---
 ## Editor
 
@@ -22,10 +22,14 @@ My personal development and gaming computer is running an [AMD Ryzen 7 5800X](ht
 - [be quiet! Dark Rock Pro 4 50.5 CFM CPU Cooler](https://pcpartpicker.com/product/F3gzK8/be-quiet-dark-rock-pro-4-505-cfm-cpu-cooler-bk022)
 - [Asus ROG Strix X570-I Gaming Mini ITX AM4 Motherboard](https://pcpartpicker.com/product/NqsnTW/asus-rog-strix-x570-i-gaming-mini-itx-am4-motherboard-rog-strix-x570-i-gaming)
 - [G.Skill Trident Z RGB 32 GB (2 x 16 GB) DDR4-3200 CL16 Memory](https://pcpartpicker.com/product/dHjJ7P/gskill-trident-z-rgb-32gb-2-x-16gb-ddr4-3200-memory-f4-3200c16d-32gtzrx)
-- [Samsung 970 Evo Plus 500 GB M.2-2280 PCIe 3.0 X4 NVME Solid State Drive](https://pcpartpicker.com/product/TwWfrH/samsung-970-evo-plus-500-gb-m2-2280-nvme-solid-state-drive-mz-v7s500bam)
+- [Samsung 980 Pro 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive](https://pcpartpicker.com/product/f3cRsY/samsung-980-pro-2-tb-m2-2280-nvme-solid-state-drive-mz-v8p2t0bam)
 - [Asus TUF-RX6800XT-O16G-GAMING Radeon RX 6800 XT 16 GB Video Card](https://pcpartpicker.com/product/HY4BD3/asus-tuf-rx6800xt-o16g-gaming-radeon-rx-6800-xt-16-gb-video-card-tuf-rx6800xt-o16g-gaming)
 - [Fractal Design Torrent Nano RGB Mini ITX Tower Case](https://pcpartpicker.com/product/6sfnTW/fractal-design-torrent-nano-rgb-mini-itx-desktop-case-fd-c-tor1n-02)
 
 I also use an [iPhone 11 Pro](https://support.apple.com/kb/SP805), [Apple Watch Series 7](https://support.apple.com/kb/SP860), and an [iPad Pro 11-inch (3rd Generation)](https://support.apple.com/kb/SP843). I honestly wish I could ditch the iPhone and just wear an Apple Watch and use a mirrorless camera for photos and videos. I also prefer the iPad over an under-powered processor inside laptop, especially since I can just run Visual Studio Code remotely and in the browser to take advantage of a desktop or server processor.
 
 For my day job I use a [MacBook Pro 16-inch (2021)](https://support.apple.com/kb/SP858) with the Apple M1 Pro and 32GB of memory.
+
+## Camera
+
+After years of using a [EOS Canon Rebel XS](https://global.canon/en/c-museum/product/dslr798.html) I recently upgraded to a [Sony A6400](https://www.sony.com/electronics/support/e-mount-body-ilce-6000-series/ilce-6400) and I'm loving it. It's currently paired with the [Sigma 30mm f/1.4 DC DN Contemporary](https://www.sigmaphoto.com/30mm-f1-4-dc-dn-c) lens.
