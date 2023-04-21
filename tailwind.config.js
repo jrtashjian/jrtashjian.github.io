@@ -6,6 +6,9 @@ module.exports = {
   ],
   darkMode: 'media',
   theme: {
+    fontFamily: {
+      'mono': [ 'Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace' ],
+    },
     extend: {
       colors: {
         'accent-dark': '#ffd128',
